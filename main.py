@@ -7,7 +7,7 @@ from tkinter import messagebox
 class NextTier:
     API_URL = "https://exercisedb.p.rapidapi.com/exercises"
     API_HEADERS = {
-        "X-RapidAPI-Key": "5face91d51msh8dd0e2cd75f71d4p1a8b67jsnba852f929a59",  # Substitua pela sua chave da API RapidAPI
+        "X-RapidAPI-Key": "5face91d51msh8dd0e2cd75f71d4p1a8b67jsnba852f929a59",
         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
     }
 
@@ -115,7 +115,7 @@ class NextTier:
             if not task["completed"]:
                 task["completed"] = True
                 self.experience += task["xp"]
-                self.level_up()  # Atualiza o nível após cada conclusão
+                self.level_up()
                 messagebox.showinfo("Tarefa Concluída", f"Tarefa '{task['name']}' concluída! Ganhou {task['xp']} XP.")
             else:
                 messagebox.showwarning("Tarefa Já Concluída", "Essa tarefa já foi concluída.")
@@ -134,5 +134,5 @@ class NextTier:
 # Função principal para rodar o sistema com Tkinter
 if __name__ == "__main__":
     root = tk.Tk()
-    app = NextTier(root)  # Inicializa o sistema de tarefas com a interface gráfica
-    root.mainloop()  # Inicia o loop do Tkinter
+    app = NextTier(root)
+    root.mainloop()
